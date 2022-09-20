@@ -1,0 +1,1 @@
+protoc --python_out=src/python --js_out=src/js/proto proto/*

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message AudioFrame {
+  uint32 index = 1;
+  sint32 amplitude = 2;
+}
