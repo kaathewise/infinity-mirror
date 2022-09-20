@@ -1,4 +1,4 @@
-// source: proto/analyser.proto
+// source: analyser.proto
 /**
  * @fileoverview
  * @enhanceable
