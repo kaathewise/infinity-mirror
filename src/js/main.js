@@ -1,4 +1,7 @@
 import "./external/protobuf.js"
+import { AmpChart } from "./chart.js"
+
+const ampChart = new AmpChart(document.getElementById("amp_canvas"));
 
 protobuf.load('static/proto/analyser.proto').then(root => {
     const AudioFrame = root.lookupType('AudioFrame');
@@ -7,6 +10,6 @@ protobuf.load('static/proto/analyser.proto').then(root => {
     socket.onmessage = (ev => {
         let buffer = new Uint8Array(ev.data);
         let audioFrame = AudioFrame.decode(buffer);
-        console.log(audioFrame);
+        ampChart.addPoint(audioFrame.index, audioFrame.amplitude);
     });
 });
